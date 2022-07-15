@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # 1. Package  설치
 # 사용자 전환
