@@ -2,7 +2,7 @@
 
 # 1. Package  설치
 # 사용자 전환
-su -
+# su -
 
 # Repository 인덱스 업데이트
 apt-get update
