@@ -7,6 +7,8 @@ sudo apt-get install -y docker.io
 # 도커 소켓 /var/run/docker.sock 권한 666 설정하여 다른 사용자도 접근할 수 있도록 변경
 sudo chmod 666 /var/run/docker.sock
 
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553
+
 # 도커 컴포즈 설치 (1.29.2 버전)
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 
