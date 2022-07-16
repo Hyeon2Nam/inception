@@ -43,8 +43,8 @@ services:
     networks:
       - intra
     tty: true
-  networks:
-    intra:
-      driver: bridge
+networks:
+  intra:
+    driver: bridge
 # volumes:
 #   db_data:
