@@ -24,6 +24,9 @@ sudo apt-get install -y vim
 # systemd 설치
 sudo apt-get install -y systemd
 
+# gpg "no public key available" 에러 방지
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553
+
 # Repository 인덱스 업데이트
 sudo apt-get update
 
