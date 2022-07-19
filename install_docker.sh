@@ -24,4 +24,4 @@ sudo systemctl restart docker
 
 docker-compose up -d
 
-docker ps -a
+docker-compose ps
