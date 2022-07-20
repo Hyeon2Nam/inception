@@ -9,4 +9,4 @@ COPY ./sqlfile.sql /
 RUN mysql < sqlfile.sql
 RUN rm -rf ./sqlfile.sql
 
-CMD ["/usr/bin/mysqld_safe"]
+CMD ["mysqld_safe"]
