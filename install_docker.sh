@@ -19,6 +19,6 @@ sudo su -c 'printf "{\n\t\"live-restore\": true\n}" > /etc/docker/docker.json'
 # 도커 서비스 재시작
 sudo systemctl restart docker
 
-# docker-compose up -d
+docker-compose up -d
 
-# docker-compose ps
+docker-compose ps
