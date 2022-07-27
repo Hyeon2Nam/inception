@@ -15,7 +15,7 @@ RUN apt-get -y install \
 
 RUN wget https://wordpress.org/latest.tar.gz
 RUN tar -xvf latest.tar.gz
-RUN mv -f /wordpress /var/www/
+RUN cp -f /wordpress /var/www/
 RUN chown -R www-data:www-data /var/www/wordpress
 RUN rm -r latest.tar.gz
 RUN rm /var/www/html/wp-config.php
