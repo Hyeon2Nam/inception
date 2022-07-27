@@ -8,6 +8,6 @@ COPY ./sqlfile.sql /
 
 RUN service mysql start
 # RUN mysql < sqlfile.sql
-RUN rm -rf ./sqlfile.sql
+# RUN rm -rf ./sqlfile.sql
 
 CMD ["mysqld_safe"]
