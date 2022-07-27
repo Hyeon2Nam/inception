@@ -8,8 +8,6 @@ services:
         restart: always
         volumes:
             - db:/var/lib/mysql
-        expose:
-            - "3306:3306"
         env_file: ./.env
         networks:
             - inception
@@ -35,8 +33,6 @@ services:
         restart: always
         volumes:
             - data:/var/www/html
-        expose: 
-            - "9000"
         networks:
             - inception
         tty: true
