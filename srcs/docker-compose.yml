@@ -21,7 +21,7 @@ services:
         ports:
             - "443:443"
         volumes:
-            - data:/var/www/wordpress
+            - data:/var/www/
         networks:
             - inception
         tty: true
@@ -32,7 +32,7 @@ services:
         env_file: ./.env
         restart: always
         volumes:
-            - data:/var/www/wordpress
+            - data:/var/www/
         networks:
             - inception
         tty: true
