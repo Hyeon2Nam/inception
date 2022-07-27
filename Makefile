@@ -1,10 +1,8 @@
 RM := rm -rf
 
-.PHONY : all docker clean fclean re
+.PHONY : all docker clean re
 
-all : docker
-
-docker:
+all :
 	bash ./srcs/tools/first_set.sh
 	bash ./srcs/tools/install_docker.sh
 	docker-compose up -d
@@ -12,6 +10,5 @@ docker:
 clean:
 	docker-compose down
 
-fclean : clean
-
-re : fclean all
+re : clean
+	docker-compose up -d
