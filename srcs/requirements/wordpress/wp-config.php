@@ -31,7 +31,7 @@ define( 'DB_USER', 'hyenam');
 define( 'DB_PASSWORD', 'asdf123');
 
 /** MySQL hostname */
-define( 'DB_HOST', 'wordpress' );
+define( 'DB_HOST', 'mariadb' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
