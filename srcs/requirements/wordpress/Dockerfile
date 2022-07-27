@@ -14,6 +14,7 @@ RUN apt-get -y install \
 	sendmail
 
 RUN wget https://wordpress.org/latest.tar.gz && tar -xvf latest.tar.gz \
+	&& mkdir /var/www \
 	&& mv /wordpress /var/www/ \
 	&& chown -R www-data:www-data /var/www/wordpress
 RUN rm -r latest.tar.gz
