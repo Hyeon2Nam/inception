@@ -1,13 +1,21 @@
-.PHONY : all docker clean re
+.PHONY : all up down clean fclean re
 
 all :
 	bash ./srcs/requirements/tools/first_set.sh
 	bash ./srcs/requirements/tools/install_docker.sh
-	cd srcs/
-	docker-compose up -d
+	docker-compose -f /srcs/docker-compose.yml up -d --build
 
-clean:
-	docker-compose down
+up:
+	docker-compose -f /srcs/docker-compose.yml up -d
 
-re : clean
-	docker-compose up -d
+down:
+	docker-compose -f /srcs/docker-compose.yml down
+
+clean: down
+	docker system prune
+
+fclean: clean
+	rm -rf /home/hyenam/data/wordpress
+	rm -rf /home/hyenam/data/mariadb
+
+re : fclean all
