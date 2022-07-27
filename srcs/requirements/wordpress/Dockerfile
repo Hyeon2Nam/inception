@@ -15,11 +15,10 @@ RUN apt-get -y install \
 
 RUN wget https://wordpress.org/latest.tar.gz && tar -xvf latest.tar.gz
 RUN mkdir /var/www \
-	&& mv /wordpress /var/www/
-	# && chown -R www-data:www-data /var/www/wordpress
+	&& mv /wordpress /var/www/ \
+	&& chown -R www-data:www-data /var/www/wordpress/*
 RUN rm -r latest.tar.gz
-RUN rm /var/www/html/wp-config.php
-RUN rm /wordpress
+RUN rm /var/www/wordpress/wp-config-sample.php
 
 COPY ./wp-config.php /var/www/html/
 COPY ./www.conf /etc/php/7.3/fpm/pool.d/
