@@ -3,23 +3,23 @@ version: '3.9'
 services:
     mariadb:
         image: mariadb
-        build: ./requirements/mariadb
+        build: ./mariadb
         container_name: mariadb
         restart: always
         volumes:
             - mariadb:/var/lib/mysql
         expose:
             - "3306"
-        env_file: ./.env
+        env_file: .env
         networks:
             - inception
         tty: true
     nginx:
         image: nginx
-        build: ./requirements/nginx
+        build: ./nginx
         container_name: nginx
         restart: always
-        env_file: ./.env
+        env_file: .env
         ports:
             - "443:443"
         volumes:
@@ -29,9 +29,9 @@ services:
         tty: true
     wordpress:
         image: wordpress
-        build: ./requirements/wordpress
+        build: ./wordpress
         container_name: wordpress
-        env_file: ./.env
+        env_file: .env
         restart: always
         volumes:
             - wordpress:/var/www/html
