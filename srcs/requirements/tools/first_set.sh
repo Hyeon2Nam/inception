@@ -8,6 +8,7 @@ sudo apt-get install -y curl
 sudo apt-get install -y software-properties-common
 sudo apt-get install -y vim
 sudo apt-get install -y systemd
+sudo apt-get install -y apt-utils
 
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553
 
