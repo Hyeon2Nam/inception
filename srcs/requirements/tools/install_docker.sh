@@ -14,3 +14,4 @@ sudo systemctl restart docker
 
 sudo echo "127.0.0.1 hyenam.42.fr" >> /etc/hosts
 
+mkdir /home/hyenam/data
