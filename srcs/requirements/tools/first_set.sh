@@ -14,7 +14,7 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8B48AD6246925553
 sudo apt-get update
 
 rm -rf /etc/resolv.conf
-cp ./srcs/reqiore,emts/tools/resolv.conf /etc/
+cp ./srcs/requirements/tools/resolv.conf /etc/
 
 sudo curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
 
