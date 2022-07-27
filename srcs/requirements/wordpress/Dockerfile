@@ -13,11 +13,10 @@ RUN apt-get -y install \
 	php-xml \
 	sendmail
 
-RUN wget https://wordpress.org/latest.tar.gz && tar -xvf latest.tar.gz \
-	&& mkdir /var/www \
-	&& sudo chmod 777 /var/www -R \
-	&& mv /wordpress /var/www/ \
-	&& chown -R www-data:www-data /var/www/wordpress
+RUN wget https://wordpress.org/latest.tar.gz && tar -xvf latest.tar.gz
+RUN mkdir /var/www \
+	&& mv /wordpress /var/www/
+	# && chown -R www-data:www-data /var/www/wordpress
 RUN rm -r latest.tar.gz
 RUN rm /var/www/html/wp-config.php
 RUN rm /wordpress
