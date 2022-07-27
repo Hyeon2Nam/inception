@@ -7,7 +7,7 @@ services:
         container_name: mariadb
         restart: always
         volumes:
-            - mariadb:/var/lib/mysql
+            - db:/var/lib/mysql
         expose:
             - "3306"
         env_file: ./.env
@@ -23,7 +23,7 @@ services:
         ports:
             - "443:443"
         volumes:
-            - wordpress:/var/www/html
+            - data:/var/www/html
         networks:
             - inception
         tty: true
@@ -34,7 +34,7 @@ services:
         env_file: ./.env
         restart: always
         volumes:
-            - wordpress:/var/www/html
+            - data:/var/www/html
         expose: 
             - "9000"
         networks:
@@ -42,16 +42,16 @@ services:
         tty: true
 
 volumes:
-    wordpress:
+    data:
         driver: local
         driver_opts:
-            device: ${VOLUMES_WORDPRESS_PATH}
+            device: ${VOLUMES_DATA_PATH}
             type: none
             o: bind
-    mariadb:
+    db:
         driver: local
         driver_opts:
-            device: ${VOLUMES_MARIADB_PATH}
+            device: ${VOLUMES_DB_PATH}
             type: none
             o: bind
 
