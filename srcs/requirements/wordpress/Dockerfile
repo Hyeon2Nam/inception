@@ -20,8 +20,8 @@ RUN mkdir /var/www \
 RUN rm -r latest.tar.gz
 RUN rm /var/www/wordpress/wp-config-sample.php
 
-COPY ./wp-config.php /var/www/html/
-COPY ./www.conf /etc/php/7.3/fpm/pool.d/
+COPY ./wp-config.php /var/www/wordpress/
+COPY ./www.conf /etc/php/7.3/fpm/pool./
 
 EXPOSE 9000
 
