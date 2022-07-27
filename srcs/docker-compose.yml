@@ -13,6 +13,8 @@ services:
             - inception
         tty: true
     nginx:
+        depends_on:
+            - wordpress
         image: nginx
         build: ./requirements/nginx
         container_name: nginx
@@ -21,18 +23,20 @@ services:
         ports:
             - "443:443"
         volumes:
-            - data:/var/www/
+            - data:/var/www/wordpress
         networks:
             - inception
         tty: true
     wordpress:
+        depends_on:
+            - mariadb
         image: wordpress
         build: ./requirements/wordpress
         container_name: wordpress
         env_file: ./.env
         restart: always
         volumes:
-            - data:/var/www/
+            - data:/var/www/wordpress
         networks:
             - inception
         tty: true
@@ -44,14 +48,14 @@ volumes:
         driver_opts:
             device: ${VOLUMES_DATA_PATH}
             o: bind
-            type: none
+            type: volume
     db:
         name: db
         driver: local
         driver_opts:
             device: ${VOLUMES_DB_PATH}
             o: bind
-            type: none
+            type: volume
 
 networks:
     inception:
