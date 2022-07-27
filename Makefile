@@ -16,7 +16,7 @@ down:
 	docker-compose -f ./srcs/docker-compose.yml down
 
 clean: down
-	docker system prune -y
+	docker system prune
 
 fclean: clean
 	rm -rf /home/hyenam/data/wordpress
