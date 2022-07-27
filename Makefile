@@ -21,7 +21,7 @@ clean: down
 	docker system prune
 
 fclean: clean
-	rm -rf /home/hyenam/data/wordpress
+	rm -rf /home/hyenam/data/data
 	rm -rf /home/hyenam/data/mariadb
 
 re : fclean all
