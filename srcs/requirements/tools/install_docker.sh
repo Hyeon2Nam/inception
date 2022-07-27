@@ -12,5 +12,3 @@ sudo su -c 'printf "{\n\t\"live-restore\": true\n}" > /etc/docker/docker.json'
 
 sudo systemctl restart docker
 
-mkdir /home/hyenam/data/wordpress
-mkdir /home/hyenam/data/mariadb
