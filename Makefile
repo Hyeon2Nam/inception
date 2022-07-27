@@ -3,6 +3,7 @@
 all :
 	bash ./srcs/requirements/tools/first_set.sh
 	bash ./srcs/requirements/tools/install_docker.sh
+	cd srcs/
 	docker-compose up -d
 
 clean:
