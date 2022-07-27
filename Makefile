@@ -1,8 +1,12 @@
-.PHONY : all up down clean fclean re
+.PHONY : all set build up down clean fclean re
 
-all :
+all : set build
+
+set:
 	bash ./srcs/requirements/tools/first_set.sh
 	bash ./srcs/requirements/tools/install_docker.sh
+
+build:
 	docker-compose -f ./srcs/docker-compose.yml up -d --build
 
 up:
