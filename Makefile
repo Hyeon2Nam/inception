@@ -3,10 +3,10 @@
 all : set build
 
 set:
-	mkdir /home/hyenam/data/data
-	mkdir /home/hyenam/data/mariadb
 	bash ./srcs/requirements/tools/first_set.sh
 	bash ./srcs/requirements/tools/install_docker.sh
+	mkdir /home/hyenam/data/data
+	mkdir /home/hyenam/data/mariadb
 
 build:
 	docker-compose -f ./srcs/docker-compose.yml up -d --build
