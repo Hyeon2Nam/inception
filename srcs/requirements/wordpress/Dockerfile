@@ -15,6 +15,7 @@ RUN apt-get -y install \
 
 RUN wget https://wordpress.org/latest.tar.gz && tar -xvf latest.tar.gz \
 	&& mkdir /var/www \
+	&& sudo chmod 777 /var/www -R \
 	&& mv /wordpress /var/www/ \
 	&& chown -R www-data:www-data /var/www/wordpress
 RUN rm -r latest.tar.gz
