@@ -3,6 +3,8 @@
 all : set build
 
 set:
+	mkdir /home/hyenam/data/data
+	mkdir /home/hyenam/data/mariadb
 	bash ./srcs/requirements/tools/first_set.sh
 	bash ./srcs/requirements/tools/install_docker.sh
 
