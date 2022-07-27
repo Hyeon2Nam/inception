@@ -13,16 +13,20 @@ RUN apt-get -y install \
 	php-xml \
 	sendmail
 
+RUN rm -rf /var/lib/apt/lists/*
+RUN mkdir /run/php
+
 RUN wget https://wordpress.org/latest.tar.gz && tar -xvf latest.tar.gz
 RUN mkdir /var/www \
 	&& mv /wordpress /var/www/ \
 	&& chown -R www-data:www-data /var/www/wordpress/*
+
 RUN rm -r latest.tar.gz
 RUN rm /var/www/wordpress/wp-config-sample.php
 
 COPY ./wp-config.php /var/www/wordpress/
-COPY ./www.conf /etc/php/7.3/fpm/pool./
+COPY ./www.conf /etc/php/7.3/fpm/pool.d
 
 EXPOSE 9000
 
-CMD ["php-fpm7.3", "--nodaemonize"]
+CMD ./usr/sbin/php-fpm7.3 -F
