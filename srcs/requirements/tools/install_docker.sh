@@ -12,3 +12,5 @@ sudo su -c 'printf "{\n\t\"live-restore\": true\n}" > /etc/docker/docker.json'
 
 sudo systemctl restart docker
 
+sudo echo "127.0.0.1 hyenam.42.fr" >> /etc/hosts
+
