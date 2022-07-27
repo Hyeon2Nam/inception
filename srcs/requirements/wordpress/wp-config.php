@@ -21,23 +21,25 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-define( 'DB_NAME', getenv('MYSQL_DATABASE'));
+define( 'DB_NAME', 'wordpress');
 #define( 'DB_NAME', 'MYSQL_DATABASE' );
 
 /** MySQL database username */
-define( 'DB_USER', getenv('MYSQL_USER'));
+define( 'DB_USER', 'hyenam');
 
 /** MySQL database password */
-define( 'DB_PASSWORD', getenv('MYSQL_PASSWORD'));
+define( 'DB_PASSWORD', 'asdf123');
 
 /** MySQL hostname */
-define( 'DB_HOST', 'mydb' );
+define( 'DB_HOST', 'wordpress' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
 
 /** The database collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
+
+define( 'WP_ALLOW_REPAIR', true );
 
 /**#@+
  * Authentication unique keys and salts.
@@ -73,3 +75,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 /** Sets up WordPress vars and included files. */
 require_once ABSPATH . 'wp-settings.php';
+?>

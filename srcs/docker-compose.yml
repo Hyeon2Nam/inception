@@ -11,7 +11,7 @@ services:
         env_file: ./.env
         networks:
             - inception
-        tty: true
+        init: true
     nginx:
         depends_on:
             - wordpress
@@ -19,27 +19,27 @@ services:
         build: ./requirements/nginx
         container_name: nginx
         restart: always
-        env_file: ./.env
+        # env_file: ./.env
         ports:
             - "443:443"
         volumes:
             - data:/var/www/wordpress
         networks:
             - inception
-        tty: true
+        init: true
     wordpress:
         depends_on:
             - mariadb
         image: wordpress
         build: ./requirements/wordpress
         container_name: wordpress
-        env_file: ./.env
+        # env_file: ./.env
         restart: always
         volumes:
             - data:/var/www/wordpress
         networks:
             - inception
-        tty: true
+        init: true
 
 volumes:
     data:
