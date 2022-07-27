@@ -39,17 +39,19 @@ services:
 
 volumes:
     data:
+        name: data
         driver: local
         driver_opts:
             device: ${VOLUMES_DATA_PATH}
-            type: volume
             o: bind
+            type: none
     db:
+        name: db
         driver: local
         driver_opts:
             device: ${VOLUMES_DB_PATH}
-            type: volume
             o: bind
+            type: none
 
 networks:
     inception:
