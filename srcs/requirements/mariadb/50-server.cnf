@@ -5,10 +5,10 @@
 # See the examples of server my.cnf files in /usr/share/mysql
 
 # this is read by the standalone daemon and embedded servers
-[server]
+# [server]
 
 # this is only for the mysqld standalone daemon
-[mysqld]
+# [mysqld]
 
 #
 # * Basic Settings
