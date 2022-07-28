@@ -25,8 +25,8 @@ RUN mkdir /var/www \
 	&& chown -R www-data:www-data /var/www/wordpress/*
 RUN rm /var/www/wordpress/wp-config-sample.php
 
-COPY ./www.conf /etc/php/7.3/fpm/pool.d
-COPY ./wp-config.php /var/www/wordpress/
+COPY ./conf/www.conf /etc/php/7.3/fpm/pool.d
+COPY ./conf/wp-config.php /var/www/wordpress/
 
 EXPOSE 9000
 
