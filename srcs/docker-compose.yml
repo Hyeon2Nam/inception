@@ -33,10 +33,10 @@ services:
         container_name: wordpress
         restart: always
         environment:
-            - MYSQL_DATABASE:${MYSQL_DATABASE}
-            - MYSQL_USER:${MYSQL_USER}
-            - MYSQL_PASSWORD:${MYSQL_PASSWORD}
-            - MYSQL_HOST:${MYSQL_HOST}
+            - MYSQL_DATABASE=${MYSQL_DATABASE}
+            - MYSQL_USER=${MYSQL_USER}
+            - MYSQL_PASSWORD=${MYSQL_PASSWORD}
+            - MYSQL_HOST=${MYSQL_HOST}
         volumes:
             - data:/var/www/wordpress
         networks:

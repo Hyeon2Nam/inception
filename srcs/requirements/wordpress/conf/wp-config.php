@@ -21,32 +21,17 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-if (!function_exists('getenv_docker')) {
-        function getenv_docker($env, $default) {
-        	if ($fileEnv = getenv($env . '_FILE')) {
-        		return rtrim(file_get_contents($fileEnv), "\r\n");
-        	}
-        	else if (($val = getenv($env)) !== false) {
-        		return $val;
-        	}
-        	else {
-        		return $default;
-        	}
-        }
-}
-
-
-define( 'DB_NAME', getenv_docker('MYSQL_DATABASE', 'wordpress'));
+define( 'DB_NAME', getenv('MYSQL_DATABASE'));
 #define( 'DB_NAME', 'MYSQL_DATABASE' );
 
 /** MySQL database username */
-define( 'DB_USER', getenv_docker('MYSQL_USER', 'hyenam'));
+define( 'DB_USER', getenv('MYSQL_USER'));
 
 /** MySQL database password */
-define( 'DB_PASSWORD', getenv_docker('MYSQL_PASSWORD', 'asdf123'));
+define( 'DB_PASSWORD', getenv('MYSQL_PASSWORD'));
 
 /** MySQL hostname */
-define( 'DB_HOST', getenv_docker('MYSQL_HOST', 'mariadb'));
+define( 'DB_HOST', getenv('MYSQL_HOST') );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
