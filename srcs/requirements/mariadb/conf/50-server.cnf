@@ -8,7 +8,7 @@
 # [server]
 
 # this is only for the mysqld standalone daemon
-# [mysqld]
+[mysqld]
 
 #
 # * Basic Settings
