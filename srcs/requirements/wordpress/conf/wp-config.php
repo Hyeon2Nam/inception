@@ -21,17 +21,17 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
-define( 'DB_NAME', getenv('MYSQL_DATABASE'));
+define( 'DB_NAME', getenv_docker('MYSQL_DATABASE', 'wordpress'));
 #define( 'DB_NAME', 'MYSQL_DATABASE' );
 
 /** MySQL database username */
-define( 'DB_USER', getenv('MYSQL_USER'));
+define( 'DB_USER', getenv_docker('MYSQL_USER', 'hyenam'));
 
 /** MySQL database password */
-define( 'DB_PASSWORD', getenv('MYSQL_PASSWORD'));
+define( 'DB_PASSWORD', getenv_docker('MYSQL_PASSWORD', 'asdf123'));
 
 /** MySQL hostname */
-define( 'DB_HOST', getenv('MYSQL_HOST') );
+define( 'DB_HOST', getenv_docker('MYSQL_HOST', 'mariadb'));
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
