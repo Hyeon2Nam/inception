@@ -21,6 +21,21 @@
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
 
+if (!function_exists('getenv_docker')) {
+        function getenv_docker($env, $default) {
+        	if ($fileEnv = getenv($env . '_FILE')) {
+        		return rtrim(file_get_contents($fileEnv), "\r\n");
+        	}
+        	else if (($val = getenv($env)) !== false) {
+        		return $val;
+        	}
+        	else {
+        		return $default;
+        	}
+        }
+}
+
+
 define( 'DB_NAME', getenv_docker('MYSQL_DATABASE', 'wordpress'));
 #define( 'DB_NAME', 'MYSQL_DATABASE' );
 
