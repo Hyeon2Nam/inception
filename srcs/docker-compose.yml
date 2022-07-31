@@ -8,7 +8,6 @@ services:
         restart: always
         volumes:
             - db:/var/lib/mysql
-        # env_file: ./.env
         networks:
             - inception
         init: true
@@ -19,7 +18,6 @@ services:
         build: ./requirements/nginx
         container_name: nginx
         restart: always
-        # env_file: ./.env
         ports:
             - "443:443"
         volumes:
@@ -33,8 +31,12 @@ services:
         image: wordpress
         build: ./requirements/wordpress
         container_name: wordpress
-        # env_file: ./.env
         restart: always
+        environment:
+            - MYSQL_DATABASE:${MYSQL_DATABASE}
+            - MYSQL_USER:${MYSQL_USER}
+            - MYSQL_PASSWORD:${MYSQL_PASSWORD}
+            - MYSQL_HOST:${MYSQL_HOST}
         volumes:
             - data:/var/www/wordpress
         networks:

@@ -16,8 +16,9 @@ RUN apt-get -y install \
 RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir /run/php
 
-RUN wget https://wordpress.org/wordpress-5.8.3.tar.gz && tar -xvzf wordpress-5.8.3.tar.gz
-RUN rm -rf wordpress-5.8.3.tar.gz
+RUN wget https://wordpress.org/wordpress-5.8.3.tar.gz \
+	&& tar -xvzf wordpress-5.8.3.tar.gz \
+	&& rm -rf wordpress-5.8.3.tar.gz
 
 RUN mkdir /var/www \
 	&& mv /wordpress /var/www/ \
