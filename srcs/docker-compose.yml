@@ -6,6 +6,8 @@ services:
         build: ./requirements/mariadb
         container_name: mariadb
         restart: always
+        expose:
+            - "3306"
         volumes:
             - db:/var/lib/mysql
         networks:
@@ -32,6 +34,8 @@ services:
         build: ./requirements/wordpress
         container_name: wordpress
         restart: always
+        expose:
+            - "9000"
         environment:
             - MYSQL_DATABASE=${MYSQL_DATABASE}
             - MYSQL_USER=${MYSQL_USER}
