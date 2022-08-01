@@ -13,6 +13,8 @@ RUN apt-get update && \
 	php-xml \
 	sendmail
 
+RUN mkdir /run/php
+
 RUN wget https://wordpress.org/wordpress-5.8.3.tar.gz \
 	&& tar -xvzf wordpress-5.8.3.tar.gz \
 	&& rm -rf wordpress-5.8.3.tar.gz
