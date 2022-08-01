@@ -53,14 +53,14 @@ volumes:
         driver: local
         driver_opts:
             device: ${VOLUMES_DATA_PATH}
-            o: bind
+            # o: bind
             type: volume
     db:
         name: db
         driver: local
         driver_opts:
             device: ${VOLUMES_DB_PATH}
-            o: bind
+            # o: bind
             type: volume
 
 networks:

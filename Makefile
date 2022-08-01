@@ -1,10 +1,13 @@
-.PHONY : all set build up down clean fclean re
+.PHONY : all set dir build up down clean fclean re
 
 all : set build
 
 set:
 	bash ./srcs/requirements/tools/first_set.sh
 	bash ./srcs/requirements/tools/install_docker.sh
+	dir
+
+dir:
 	mkdir /home/hyenam/data/data
 	mkdir /home/hyenam/data/mariadb
 
