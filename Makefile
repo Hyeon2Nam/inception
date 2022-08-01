@@ -5,7 +5,8 @@ all : set build
 set:
 	bash ./srcs/requirements/tools/first_set.sh
 	bash ./srcs/requirements/tools/install_docker.sh
-	dir
+	mkdir /home/hyenam/data/data
+	mkdir /home/hyenam/data/mariadb
 
 dir:
 	mkdir /home/hyenam/data/data
